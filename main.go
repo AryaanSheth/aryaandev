@@ -1,20 +1,38 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
-	"net/http"
+	"log"
+	"os"
+
+	"github.com/gofiber/fiber/v2"
 )
 
-func homePage(c *gin.Context) {
-	c.HTML(http.StatusOK, "test.html", gin.H{
-		"title": "Main website",
-	})
+func home(c *fiber.Ctx) error {
+	return c.SendFile("./content/main.html")
+}
 
+func api(c *fiber.Ctx) error {
+	return c.JSON(fiber.Map{
+		".name":    "Aryaan",
+		"about":    "Backend Developer (Golang, Java, Python) & Data Science Enthusiast",
+		"email":    "avsheth03@gmail.com",
+		"github":   "https://github.com/AryaanSheth",
+		"linkedin": "https://www.linkedin.com/in/aryaan-sheth-b9565423b/",
+	})
 }
 
 func main() {
-	r := gin.Default()
-	r.LoadHTMLGlob("content/*")
-	r.GET("/", homePage)
-	r.Run()
+	app := fiber.New()
+
+	go app.Get("/api", api)
+
+	go app.Get("/", home)
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	log.Fatal(app.Listen("0.0.0.0:" + port))
+
 }
