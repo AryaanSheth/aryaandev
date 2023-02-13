@@ -9,32 +9,31 @@
 <body>
 
     <div class="main">
-        <div>
-            <p> <span class="name">aryaan@server</span>: <span class="highlight">~/</span>$ &emsp; cd mydir <br>
-                <span class="name">aryaan@server</span>: <span class="highlight">~/mydir</span>$ &emsp; cat profile.txt
-            </p>
-            <p>
-                <br>
-                    Hey, I'm Aryaan<br>
-                    Backend Developer (Go, Java, Python)<br>
-                    Data Science Enthusiast
-                <br>
-            </p>
-            <p> <span class="name">aryaan@server</span>: <span class="highlight">~/mydir</span>$ &emsp; tree ./links/ <br>
-                ./links/<br>
-                &nbsp;├── <a href="https://github.com/AryaanSheth">GitHub</a><br>
-                &nbsp;├── <a href="https://www.linkedin.com/in/aryaan-sheth-b9565423b/">LinkedIn</a><br>
-                &nbsp;└── <a href="mailto:avsheth03@gmail.com">Email</a><br>
-                <span class="name">aryaan@server</span>: <span class="highlight">~/mydir</span>$
-            </p>
-        </div>
+        <p> <span class="name">aryaan@server</span>: <span class="highlight">~/</span>$ &emsp; cd mydir <br>
+            <span class="name">aryaan@server</span>: <span class="highlight">~/mydir</span>$ &emsp; cat profile.txt
+        </p>
+        <p>
+            <br>
+                Hey, I'm Aryaan<br>
+                Backend Developer (Go, Java, Python)<br>
+                Data Science Enthusiast
+            <br>
+        </p>
+        <p> <span class="name">aryaan@server</span>: <span class="highlight">~/mydir</span>$ &emsp; tree ./links/ <br>
+            ./links/<br>
+            &nbsp;├── <a href="https://github.com/AryaanSheth">GitHub</a><br>
+            &nbsp;├── <a href="https://www.linkedin.com/in/aryaan-sheth-b9565423b/">LinkedIn</a><br>
+            &nbsp;└── <a href="mailto:avsheth03@gmail.com">Email</a><br>
+            <span class="name">aryaan@server</span>: <span class="highlight">~/mydir</span>$
+        </p>
     </div>
 
     <style>
 
         @font-face {
-            font-family: 'Cascadia Code';
-            src: url('fonts/CascadiaCode-Regular.ttf') format('truetype')
+            font-family: 'customcascadia';
+            src: url('../fonts/CascadiaCode-Regular.ttf') format('truetype'),
+                 url('../fonts/CascadiaCode-Regular.woff2') format('woff2');
         }
 
         body {
@@ -61,7 +60,7 @@
             transform: translate(-50%, -50%);
             text-align: left;
             
-            font-family: 'Cascadia Code';
+            font-family: 'customcascadia';
             font-style: normal;
             font-weight: 700;
             font-size: 32px;
