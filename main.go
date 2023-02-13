@@ -24,6 +24,8 @@ func api(c *fiber.Ctx) error {
 func main() {
 	app := fiber.New()
 
+	app.Static("/fonts", "./fonts")
+
 	go app.Get("/api", api)
 
 	go app.Get("/", home)
